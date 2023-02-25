@@ -10,6 +10,32 @@ api для проекта
 
 Расположен в файле example.env в директории infra
 
+# Как запустить приложения в контейнерах:
+
+Развернуть проект через docker-compose:
+
+```
+docker-compose up -d
+```
+
+Выполнить миграции:
+
+```
+docker-compose exec web python manage.py migrate
+```
+
+Создать суперпользователя:
+
+```
+docker-compose exec web python manage.py createsuperuser
+```
+
+Собрать статику:
+
+```
+docker-compose exec web python manage.py collectstatic --no-input
+```
+
 ### Использованные технологии:
 
 Python 3.7
